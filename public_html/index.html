@@ -113,10 +113,21 @@ and open the template in the editor.
             #withdraw:hover {
                 background-color: rgba(239, 189, 161, 100);
             }
+            #footer {
+                background-color: #c9d5d7;
+                width: 100%;
+                text-align: right;
+                font-size: 16px;
+                color: white;
+                position: absolute;
+                bottom:-100;
+                left:0;
+                padding: 1%;
+            }
         </style>
     </head>
     <body class="container">
-        <div id="piggybank"><img src='images/piggybank3.png' alt='logo' /></div>
+        <div id="piggybank"><img src='images/piggybank3.png' style='width: 30%' alt='logo' /></div>
         <div id="signupform" class="form-inline">
             <input type="text" id="name" class="form-control input-lg" placeholder="Enter your name here..."/>
             <input type="button" id="signup" class="btn btn-lg btn-primary" value="Sign up!"/>
@@ -130,6 +141,9 @@ and open the template in the editor.
         </div>
         <div id='button_container' hidden>
             <input id='withdraw' type='button' class='btn btn-lg' value='WITHDRAW' />
+        </div>
+        <div id='footer'>
+            <span>Brought to you by</span><br /><span>J.P. Morgan Chase & Co.</span>
         </div>
     </body>
 </html>
