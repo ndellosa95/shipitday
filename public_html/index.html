@@ -19,6 +19,7 @@ and open the template in the editor.
                 $("#intro").html("Hello, <span style='color: rgba(212, 79, 95, 100);'>" + name + ".</span><div style='font-size: 48px'>It's nice to see you again!</div>");
                 $("#intro").fadeIn(800, function () {
                     $("#moneypart").fadeIn(800);
+                    $("#button_container").fadeIn(800);
                 });
             }
             var cookies = [];
@@ -50,6 +51,7 @@ and open the template in the editor.
                 background-color: #9dcfd6;
                 color: white;
                 font-family: "Avenir Next", arial, sans-serif;
+                padding-top: 1%;
             }
             #signupform {
                 margin-top: 30%;
@@ -97,6 +99,20 @@ and open the template in the editor.
                 font-size: 40px;
                 color: black;
             }
+            #button_container {
+                margin-top: 10%;
+                margin-bottom: 20%;
+            }
+            #withdraw {
+                font-size: 32px;
+                padding: 2%;
+                padding-left: 3%;
+                padding-right: 3%;
+                background-color: rgba(244, 123, 56, 100);
+            }
+            #withdraw:hover {
+                background-color: rgba(239, 189, 161, 100);
+            }
         </style>
     </head>
     <body class="container">
@@ -112,6 +128,8 @@ and open the template in the editor.
                 <div id="circle2"><div id="moneytext">$10.00</div></div>
             </div>
         </div>
-        <div></div>
+        <div id='button_container' hidden>
+            <input id='withdraw' type='button' class='btn btn-lg' value='WITHDRAW' />
+        </div>
     </body>
 </html>
