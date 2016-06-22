@@ -29,25 +29,12 @@ and open the template in the editor.
               showToDo();
             };
             function showIntro(name) {
-                $("#intro").html("Hello, " + name);
-                $("#intro").animate({
-                    left: "-=45%"
-                }, 250, function () {
-                    $("#intro").animate({
-                       left: "-=10%" 
-                    }, 1000, function () {
-                        $("#intro").animate({
-                            left: "-=45%"
-                        }, 250, function () {
-                            $("#intro").fadeOut();
-                            showMain();
-                        });
-                    });
-                });
                 $("#intro").html("Hello, <span style='color: rgba(212, 79, 95, 100);'>" + name + ".</span><div style='font-size: 48px'>It's nice to see you again!</div>");
                 $("#intro").fadeIn(800, function () {
                     $("#moneypart").fadeIn(800);
                     $("#button_container").fadeIn(800);
+                    $("#footer").fadeIn(800);
+                    showMain();
                 });
             }
             var cookies = [];
@@ -162,7 +149,7 @@ and open the template in the editor.
         </div>
         <div id="intro" hidden></div>
         <div class="container" id="to-do"></div>
-        <div id='moneypart'>
+        <div id='moneypart' hidden>
             <div style='color: black; font-size: 48px;'>Your Savings</div>
             <div id="circle1">
                 <div id="circle2"><div id="moneytext">$17.38</div></div>
@@ -171,7 +158,7 @@ and open the template in the editor.
         <div id='button_container' hidden>
             <input id='withdraw' type='button' class='btn btn-lg' value='WITHDRAW' />
         </div>
-        <div id='footer'>
+        <div id='footer' hidden>
             <span>Brought to you by</span><br /><span>J.P. Morgan Chase & Co.</span>
         </div>
     </body>
