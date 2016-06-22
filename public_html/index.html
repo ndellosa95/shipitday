@@ -15,10 +15,42 @@ and open the template in the editor.
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script>
+            function showIntro(name) {
+                $("#intro").html("Hello, " + name);
+                $("#intro").animate({
+                    left: "-=45%"
+                }, 250, function () {
+                    $("#intro").animate({
+                       left: "-=10%" 
+                    }, 1000, function () {
+                        $("#intro").animate({
+                            left: "-=45%"
+                        }, 250, function () {
+                            $("#intro").fadeOut()
+                        });
+                    });
+                });
+            }
+            var cookies = [];
+            var cookies1 = document.cookie.split(";");
+            for (var i=0; i < cookies1.length; i++) {
+                var cookies2 = cookies1[i].split("=");
+                var key = cookies2[0];
+                var value = cookies2[1];
+                cookies[key] = value;
+                console.log("val: " + value + ", val2: " + cookies[key]);
+            }
             $(document).ready(function () {
+               if (cookies["shipitname"] !== undefined) {
+                   $("#signupform").hide();
+                   showIntro(cookies["shipitname"]);
+               }
                $("#signup").click(function () {
                   var name = $("#name").val();
                   document.cookie = "shipitname=" + name;
+                  $("#signupform").fadeOut("slow", function () {
+                     showIntro(name);
+                  });
                });
             });
         </script>
@@ -32,6 +64,11 @@ and open the template in the editor.
             #name {
                 background-color: #ffff99;
             }
+            #intro {
+                left: 100%;
+                position: absolute;
+                font-size: 64px;
+            }
         </style>
     </head>
     <body class="container">
@@ -39,5 +76,6 @@ and open the template in the editor.
             <input type="text" id="name" class="form-control input-lg" placeholder="Enter your name here..."/>
             <input type="button" id="signup" class="btn btn-lg btn-primary" value="Sign up!"/>
         </div>
+        <div id="intro"></div>
     </body>
 </html>
