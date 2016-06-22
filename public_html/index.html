@@ -16,20 +16,8 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script>
             function showIntro(name) {
-                $("#intro").html("Hello, " + name);
-                $("#intro").animate({
-                    left: "-=45%"
-                }, 250, function () {
-                    $("#intro").animate({
-                       left: "-=10%" 
-                    }, 1000, function () {
-                        $("#intro").animate({
-                            left: "-=45%"
-                        }, 250, function () {
-                            $("#intro").fadeOut()
-                        });
-                    });
-                });
+                $("#intro").html("Hello, <span style='color: rgba(212, 79, 95, 100);'>" + name + ".</span><div style='font-size: 48px'>It's nice to see you again!</div>");
+                $("#intro").fadeIn(800);
             }
             var cookies = [];
             var cookies1 = document.cookie.split(";");
@@ -57,6 +45,8 @@ and open the template in the editor.
         <style>
             body {
                 text-align:center;
+                background-color: #9dcfd6;
+                color: white;
             }
             #signupform {
                 margin-top: 30%;
@@ -65,17 +55,24 @@ and open the template in the editor.
                 background-color: #ffff99;
             }
             #intro {
-                left: 100%;
-                position: absolute;
                 font-size: 64px;
+                font: "Avenir Next", Helvetica, sans-serif;
+            }
+            #piggybank {
+                text-align: left;
+                font-size: 72px;
+                width: 100%;
+                margin-bottom: 10%;
+                margin-left: -5%;
             }
         </style>
     </head>
     <body class="container">
+        <div id="piggybank"><span style="color: rgba(212, 79, 95, 100);">piggy</span><span style="color: rgba(244, 123, 56, 100);">bank</span></div>
         <div id="signupform" class="form-inline">
             <input type="text" id="name" class="form-control input-lg" placeholder="Enter your name here..."/>
             <input type="button" id="signup" class="btn btn-lg btn-primary" value="Sign up!"/>
         </div>
-        <div id="intro"></div>
+        <div id="intro" hidden></div>
     </body>
 </html>
