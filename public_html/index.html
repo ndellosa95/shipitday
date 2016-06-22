@@ -47,6 +47,7 @@ and open the template in the editor.
                 text-align:center;
                 background-color: #9dcfd6;
                 color: white;
+                font-family: "Avenir Next", arial, sans-serif;
             }
             #signupform {
                 margin-top: 30%;
@@ -56,14 +57,43 @@ and open the template in the editor.
             }
             #intro {
                 font-size: 64px;
-                font: "Avenir Next", Helvetica, sans-serif;
             }
             #piggybank {
                 text-align: left;
                 font-size: 72px;
                 width: 100%;
-                margin-bottom: 10%;
+                margin-bottom: 5%;
                 margin-left: -5%;
+            }
+            #moneypart {
+                margin-top: 5%;
+            }
+            #circle1 {
+                width: 240px;
+                height: 240px;
+                -webkit-border-radius: 120px;
+                -moz-border-radius: 120px;
+                border-radius: 120px;
+                background: rgba(244, 123, 56, 100);
+                float: none;
+                margin: 0 auto;
+            }
+            #circle2 {
+                width: 200px;
+                height: 200px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                background: #9dcfd6;
+                position: relative;
+                top: 7.5%;
+                margin: 0 auto;
+                margin-top: 5%;
+            }
+            #moneytext {
+                padding-top: 35%;
+                font-size: 40px;
+                color: black;
             }
         </style>
     </head>
@@ -74,5 +104,11 @@ and open the template in the editor.
             <input type="button" id="signup" class="btn btn-lg btn-primary" value="Sign up!"/>
         </div>
         <div id="intro" hidden></div>
+        <div id='moneypart'>
+            <div style='color: black; font-size: 40px;'>Your savings</div>
+            <div id="circle1">
+                <div id="circle2"><div id="moneytext">$10.00</div></div>
+            </div>
+        </div>
     </body>
 </html>
