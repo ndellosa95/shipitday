@@ -6,12 +6,27 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>ShipIT Day Project</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+               $("#signup").click(function () {
+                  var name = $("#name").val();
+                  document.cookie = "shipitname=" + name;
+               });
+            });
+        </script>
     </head>
     <body>
-        
+        <div id="signupform" class="container-fluid">
+            <input type="text" id="name" placeholder="Enter your name here..."/>
+            <input type="button" id="signup" class="btn btn-lg" value="Sign up!"/>
+        </div>
     </body>
 </html>
